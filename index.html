@@ -83,25 +83,6 @@
             <hr class="total-button"/>
         </div>
 
-
-        <div class="subtotal-container">
-            <form class="row">
-                <div class="col endAlign-btn">
-                    <input type="number" class="form-control text-center" placeholder="Sub Total" aria-label="Sub total" id="subTotal">
-                </div>
-            </form>
-        </div>
-
-        <div class="profit-container">
-            <form class="row">
-                <div class="col endAlign-btn input-group my-3">
-                    <span class="input-group-text">10%</span>
-
-                    <input type="number" class="form-control text-center " placeholder="" aria-label="Profit" id="profit">
-                </div>
-            </form>
-        </div>
-
         <div class="subtotal-container">
             <form class="row">
                 <div class="col endAlign-btn">
@@ -130,9 +111,7 @@
 				total = rate * weight
 				document.getElementById('total' + i).value = total.toFixed(2)
 				subTotal = subTotal + (rate * weight)
-				document.getElementById('subTotal').value = subTotal.toFixed(2)
 				profit = subTotal * 0.1
-				document.getElementById('profit').value = profit.toFixed(2)
 				finalTotal = subTotal + profit
 				document.getElementById('finalTotal').value = finalTotal.toFixed(2)
 
