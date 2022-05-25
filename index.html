@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calc</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div>
+    <!-- style="background-color: #ededed;-->
+    <div class="pt-5 pb-4 bg-light">
+        <img src="assets/Black-Font.png" alt="Prime Wholesale logo" width="200px" class="img-responsive center-block d-block mx-auto" >
+    </div>
+
+    <hr/>
+
+    <section class="h-100 p-md-5 p-2">
+        <h2 class="text-center pb-3">Custom cheat sheet</h2>
+        <div class="gold-containers">
+            <h4>Gold</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" pattern="\d*" class="form-control text-center" id="rate1" value="38" aria-label="Rate" onfocusout="defaultZero(1);">
+                <span class="input-group-text">Gr.</span>
+                <input type="number" pattern="\d*" class="form-control text-center" id="weight1" aria-label="Grams" onfocusout="defaultZero(1);">
+                <span class="input-group-text">=</span>
+                <input type="number" class="form-control text-center" id="total1" placeholder="Total" aria-label="Rate">
+            </div>
+        </div>
+
+
+        <div class="round-diam-container">
+            <h4>Round Diamonds</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" pattern="\d*" class="form-control text-center" value="350" aria-label="Rate" id="rate2" onfocusout="defaultZero(2);">
+                <span class="input-group-text">Ctw.</span>
+                <input type="number" pattern="\d*" class="form-control text-center" aria-label="Grams" id="weight2" onfocusout="defaultZero(2);">
+                <span class="input-group-text">=</span>
+                <input type="number" class="form-control text-center" placeholder="Total" aria-label="Rate" id="total2">
+            </div>
+        </div>
+
+
+        <div class="round-diam-container">
+            <h4>Bag. Diamonds</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" pattern="\d*" class="form-control text-center rate" aria-label="Rate" id="rate3" onfocusout="defaultZero(3);">
+                <span class="input-group-text">Ctw.</span>
+                <input type="number" pattern="\d*" class="form-control text-center weight" aria-label="Grams" id="weight3" onfocusout="defaultZero(3);">
+                <span class="input-group-text">=</span>
+                <input type="number" class="form-control text-center" placeholder="Total" aria-label="Rate" id="total3">
+            </div>
+        </div>
+
+
+        <div class="round-diam-container">
+            <h4>Misc. Diamonds</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+
+                <input type="number" pattern="\d*" class="form-control text-center rate" aria-label="Rate" id="rate4" onfocusout="defaultZero(4);">
+                <span class="input-group-text">Ctw.</span>
+
+                <input type="number" pattern="\d*" class="form-control text-center weight" aria-label="Grams" id="weight4" onfocusout="defaultZero(4);">
+
+                <span class="input-group-text">=</span>
+
+                <input type="number" class="form-control  text-center" placeholder="Total" aria-label="Rate" id="total4">
+            </div>
+            <hr class="total-button"/>
+        </div>
+
+
+        <div class="subtotal-container">
+            <form class="row">
+                <div class="col endAlign-btn">
+                    <input type="number" class="form-control text-center" placeholder="Sub Total" aria-label="Sub total" id="subTotal">
+                </div>
+            </form>
+        </div>
+
+        <div class="profit-container">
+            <form class="row">
+                <div class="col endAlign-btn input-group my-3">
+                    <span class="input-group-text">10%</span>
+
+                    <input type="number" class="form-control text-center " placeholder="" aria-label="Profit" id="profit">
+                </div>
+            </form>
+        </div>
+
+        <div class="subtotal-container">
+            <form class="row">
+                <div class="col endAlign-btn">
+                    <input type="number" class="form-control text-center " placeholder="Total" aria-label="Final Total" id="finalTotal">
+                </div>
+            </form>
+        </div>
+
+
+    </section>
+</div>
+
+
+<script>
+
+	function calculate() {
+		let total = 0
+		let subTotal = 0
+		let profit = 0
+		let finalTotal = 0
+
+		for (let i = 1; i < 5; i++) {
+			var rate = parseFloat(document.getElementById('rate' + i).value)
+			var weight = parseFloat(document.getElementById('weight' + i).value)
+			if (rate && weight || rate === 0 || weight === 0) {
+				total = rate * weight
+				document.getElementById('total' + i).value = total.toFixed(2)
+				subTotal = subTotal + (rate * weight)
+				document.getElementById('subTotal').value = subTotal.toFixed(2)
+				profit = subTotal * 0.1
+				document.getElementById('profit').value = profit.toFixed(2)
+				finalTotal = subTotal + profit
+				document.getElementById('finalTotal').value = finalTotal.toFixed(2)
+
+			}
+		}
+	}
+
+	function defaultZero(id) {
+		var rate = document.getElementById('rate' + id).value
+		var weight = document.getElementById('weight' + id).value
+
+		if (rate === '') {
+			document.getElementById('rate' + id).value = 0
+		}
+
+		if (weight === '') {
+			document.getElementById('weight' + id).value = 0
+		}
+
+		calculate()
+	}
+
+
+</script>
+
+</body>
+</html>

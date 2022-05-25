@@ -1,0 +1,29 @@
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+
+.total-button {
+    margin-left: auto;
+    width: 31%;
+}
+
+.endAlign-btn {
+    margin-left: 68%;
+}
+
+/*img {*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+@media only screen and (max-width: 600px) {
+    .endAlign-btn {
+        margin-left: 50%;
+    }
+
+    .total-button {
+        margin-left: auto;
+        width: 48%;
+    }
+}
