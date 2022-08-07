@@ -6,55 +6,55 @@ label{
     color: grey;
 }
 
-.branding{
-    background: linear-gradient(222.51deg, #91CED5 13.41%, #EAF098 79.62%);
-    opacity: 80%;
-}
-
-.form-control{
-    border-width: 0 0 0px;
-    justify-content: space-around;
-    padding: 0;
-    width: 15%;
-    margin: 0 5px;
-    color: grey;
-}
-
-.form-control:focus {
-    border-color: transparent;
-    box-shadow: none;
-}
-
-.input-group>input.form-control {
-    flex: 0 1 55px;
-    margin: 0 5px;
-    color: grey;
-}
-
-/*.total-button {*/
-/*    margin-left: auto;*/
-/*    width: 31%;*/
+/*.branding{*/
+/*    background: linear-gradient(222.51deg, #91CED5 13.41%, #EAF098 79.62%);*/
+/*    opacity: 80%;*/
 /*}*/
 
-/*.endAlign-btn {*/
-/*    margin-left: 68%;*/
+/*.form-control{*/
+/*    border-width: 0 0 0px;*/
+/*    justify-content: space-around;*/
+/*    padding: 0;*/
+/*    width: 15%;*/
+/*    margin: 0 5px;*/
+/*    color: grey;*/
 /*}*/
 
-
-
-/*img {*/
-/*    display: block;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
+/*.form-control:focus {*/
+/*    border-color: transparent;*/
+/*    box-shadow: none;*/
 /*}*/
 
-/*@media only screen and (max-width: 600px) {*/
-/*    .endAlign-btn {*/
-/*        margin-left: 50%;*/
-/*    }*/
-
-/*    .total-button {*/
-/*        margin-left: auto;*/
-/*        width: 48%;*/
-/*    }*/
+/*.input-group>input.form-control {*/
+/*    flex: 0 1 55px;*/
+/*    margin: 0 5px;*/
+/*    color: grey;*/
 /*}*/
+
+.total-button {
+    margin-left: auto;
+    width: 31%;
+}
+
+.endAlign-btn {
+    margin-left: 68%;
+}
+
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .endAlign-btn {
+        margin-left: 50%;
+    }
+
+    .total-button {
+        margin-left: auto;
+        width: 48%;
+    }
+}
