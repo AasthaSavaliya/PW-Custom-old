@@ -6,6 +6,7 @@ function calculate() {
 
 		for (let i = 1; i < 10; i++) {
 			var rate = parseFloat(document.getElementById('rate' + i).value)
+			// debugger
 			var weight = parseFloat(document.getElementById('weight' + i).value)
 			if (rate && weight || rate === 0 || weight === 0) {
 				total = rate * weight
@@ -32,3 +33,7 @@ function calculate() {
 		}
 		calculate()
 	}
+
+
+window.copy.setData('Text',document.getElementById('total8').value + document.getElementById('total9').value
++ document.getElementById('total10').value + document.getElementById('total11').value);
