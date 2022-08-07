@@ -2,6 +2,15 @@ h1, h2 {
     font-family: Georgia, serif;
 }
 
+label{
+    color: grey;
+}
+
+.branding{
+    background: linear-gradient(222.51deg, #91CED5 13.41%, #EAF098 79.62%);
+    opacity: 80%;
+}
+
 .form-control{
     border-width: 0 0 0px;
     justify-content: space-around;
@@ -11,18 +20,14 @@ h1, h2 {
     color: grey;
 }
 
+.form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
 .input-group>input.form-control {
     flex: 0 1 55px;
     margin: 0 5px;
-    color: grey;
-}
-
-.branding{
-    background: linear-gradient(222.51deg, #91CED5 13.41%, #EAF098 79.62%);
-    opacity: 80%;
-}
-
-label{
     color: grey;
 }
 
